@@ -1,5 +1,8 @@
+import os
 from flask import Flask, jsonify
 import pandas as pd
+
+
 
 
 anything= Flask(__name__)
@@ -28,4 +31,5 @@ def getsort():
 
 
 if __name__==   "__main__":
+    port = int(os.environ.get("PORT", 5000))
     anything.run(host="0.0.0.0", port=port, debug=True)
