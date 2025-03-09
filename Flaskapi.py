@@ -21,8 +21,11 @@ def gerSpecies(name):
     moreF= data[data["species"]==name]
     return jsonify(moreF.to_dict(orient= "records"))
 
-
+@anything.route("/sepal")
+def getsort():
+    sort= data.sort_values(by="sepal_length",ascending=True)
+    return f"this is {sort}"
 
 
 if __name__==   "__main__":
-    anything.run(port=8080,debug=True)
+    anything.run(debug=True)
